@@ -2,13 +2,13 @@ import time
 import pyupbit
 import datetime
 
-access = "WqvWrkudydTqtT9hxlO7ynKHtWHIyicU8DFS8H7"          # 본인 값으로 변경
-secret = "cgit0PmT5Bw4X8kiKWGJ1dnYstAmMqNyNeO8oSV"          # 본인 값으로 변경
+access = "zA7lfQBqPiq8KVnh0YOhZwAUGULatAW2VyDpnstV"          # 본인 값으로 변경
+secret = "1aEidxtYBI7a5W44IbAD7rjxckk47YwwTKMw0l5N"          # 본인 값으로 변경
 upbit = pyupbit.Upbit(access, secret)
 
 
-accesss = "T5etoB6WxvZDWeS8KLxqLYoUVA6qPSj6Mf7ZJPV"          # 본인 값으로 변경
-secrett = "YUPOX1AOBmlsOvxr1LMb5Qer3JUTSxZ0cFBtEHL"          # 본인 값으로 변경
+accesss = "SvQxLejA9kwM209gg4LZHkvjcB29UrrOjNEyLErq"          # 본인 값으로 변경
+secrett = "BmiiIiO0hzZtO4tqLkdgogs7tC0GWiHlFM15v9U5"          # 본인 값으로 변경
 upbitt = pyupbit.Upbit(accesss, secrett)
 
 
@@ -27,7 +27,6 @@ while True:
             current_price = pyupbit.get_current_price("KRW-XRP")
             target_price = pyupbit.get_current_price("KRW-XRP") - 10
             upbit.buy_limit_order("KRW-XRP", target_price, 20000/target_price)
-            print("매도",target_price,upbit.get_balance("KRW"))
             print(20000/target_price)
         elif 4720 < upbit.get_balance("XRP"): 
                 current_price = pyupbit.get_current_price("KRW-XRP")
