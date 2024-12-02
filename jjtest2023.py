@@ -16,7 +16,7 @@ print(upbit.get_balance("KRW"))
 print(upbit.get_balance("XRP"))
 print(upbitt.get_balance("ETH"))
 print(pyupbit.get_current_price("KRW-XRP"))
-print(pyupbit.get_current_price("KRW-XRP") - 10)
+print(pyupbit.get_current_price("KRW-XRP") - 20)
 print(pyupbit.get_current_price("KRW-ETH"))
 print(pyupbit.get_current_price("KRW-ETH") - 30000)
 
@@ -25,14 +25,14 @@ while True:
         
         if 4900000 < upbit.get_balance("KRW"):            
             current_price = pyupbit.get_current_price("KRW-XRP")
-            target_price = pyupbit.get_current_price("KRW-XRP") - 10
+            target_price = pyupbit.get_current_price("KRW-XRP") - 20
             upbit.buy_limit_order("KRW-XRP", target_price, 20000/target_price)
             print(20000/target_price)
         elif 4720 < upbit.get_balance("XRP"): 
                 current_price = pyupbit.get_current_price("KRW-XRP")
-                target_price1 = pyupbit.get_current_price("KRW-XRP") + 10
+                target_price1 = pyupbit.get_current_price("KRW-XRP") + 20
                 upbit.sell_limit_order("KRW-XRP",current_price + 10, 20000/current_price)
-                print(current_price+10)
+                print(current_price+20)
                 print(20000/current_price)
         elif 1510000 < upbitt.get_balance("KRW"):            
             current_pricee = pyupbit.get_current_price("KRW-ETH")
@@ -44,8 +44,6 @@ while True:
                 current_pricee = pyupbit.get_current_price("KRW-ETH")                
                 upbitt.sell_limit_order("KRW-ETH",current_pricee + 30000, 60000/current_pricee)
               
-               
-        time.sleep(1)
     except Exception as e:
         print(e)
         time.sleep(1)
